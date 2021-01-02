@@ -1,0 +1,17 @@
+<script>
+  // https://www.cnblogs.com/xianbin7/p/10720638.html
+
+  // Knuth-Durstenfeld Shuffle 时间复杂度:O(n*n) 空间复杂度:O(1)
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log("old array:", arr.toString());
+  for (let i = arr.length - 1; i > 0; i--) {
+    let pos = Math.floor(Math.random() * arr.length);
+    console.log(pos);
+    //交换位置 解构赋值或者 splice
+    [arr[pos], arr[i]] = [arr[i], arr[pos]];
+    // const temp = arr[pos];
+    // arr.splice(pos, 1, arr[i]);
+    // arr.splice(i, 1, temp);
+  }
+  console.log("new array:", arr.toString());
+</script>
