@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <style>
       .horizontal-carousel {
+        /* 一定要隐藏掉超出部分的内容 */
         overflow: hidden;
         width: 500px;
         height: 50px;
         border: 1px solid gray;
       }
-
       .horizontal-carousel ol {
+        /* 这里不能设为inline，否则translate不起作用要用margin-left来做动画 */
         display: inline-block;
+        /* 强制不换行，不设的话由于内容较多会换行到下方 */
         white-space: nowrap;
-        animation: horizontal-move 10s linear infinite;
+        animation: horizontal-move 20s linear infinite;
+        /* 容器的宽度，似乎纯CSS的话只能写死 */
         transform: translate(500px);
       }
       @keyframes horizontal-move {
@@ -22,7 +23,7 @@
           transform: translate(500px);
         }
         100% {
-          transform: translate(calc(-500px- 100%));
+          transform: translate(calc(-100%));
         }
       }
       .horizontal-carousel ol li {
@@ -31,9 +32,27 @@
       }
 
       .vertical-carousel {
+        overflow: hidden;
         width: 500px;
-        height: 500px;
+        height: 200px;
         border: 1px solid gray;
+      }
+      .vertical-carousel ol {
+        list-style-type: none;
+        transform: translate(0, 200px);
+        animation: vertical-move 20s linear infinite;
+      }
+      @keyframes vertical-move {
+        from {
+          transform: translate(0, 200px);
+        }
+        to {
+          transform: translate(0, calc(-100%));
+        }
+      }
+      .vertical-carousel ol li {
+        line-height: 50px;
+        height: 50px;
       }
     </style>
   </head>
