@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      .horizontal-carousel {
+        overflow: hidden;
+        width: 500px;
+        height: 50px;
+        border: 1px solid gray;
+      }
+
+      .horizontal-carousel ol {
+        display: inline-block;
+        white-space: nowrap;
+        animation: horizontal-move 10s linear infinite;
+        transform: translate(500px);
+      }
+      @keyframes horizontal-move {
+        0% {
+          transform: translate(500px);
+        }
+        100% {
+          transform: translate(calc(-500px- 100%));
+        }
+      }
+      .horizontal-carousel ol li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      .vertical-carousel {
+        width: 500px;
+        height: 500px;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>横向滚动跑马灯</h2>
+    <div class="horizontal-carousel">
+      <ol>
+        <li>披绣闼</li>
+        <li>俯雕甍</li>
+        <li>山原旷其盈视</li>
+        <li>川泽纡其骇瞩</li>
+        <li>闾阎扑地，钟鸣鼎食之家</li>
+        <li>舸舰弥津，青雀黄龙之舳</li>
+        <li>云销雨霁，彩彻区明</li>
+        <li>落霞与孤鹜齐飞</li>
+        <li>秋水共长天一色</li>
+        <li>渔舟唱晚，响穷彭蠡之滨</li>
+        <li>雁阵惊寒，声断衡阳之浦</li>
+      </ol>
+    </div>
+    <h2>纵向滚动跑马灯</h2>
+    <div class="vertical-carousel">
+      <ol>
+        <li>披绣闼</li>
+        <li>俯雕甍</li>
+        <li>山原旷其盈视</li>
+        <li>川泽纡其骇瞩</li>
+        <li>闾阎扑地，钟鸣鼎食之家</li>
+        <li>舸舰弥津，青雀黄龙之舳</li>
+        <li>云销雨霁，彩彻区明</li>
+        <li>落霞与孤鹜齐飞</li>
+        <li>秋水共长天一色</li>
+        <li>渔舟唱晚，响穷彭蠡之滨</li>
+        <li>雁阵惊寒，声断衡阳之浦</li>
+      </ol>
+    </div>
+  </body>
+</html>
