@@ -1,0 +1,19 @@
+<!-- 自己实现js的new操作 -->
+<script>
+  function myNew(constrc, ...args) {
+    const obj = {}; // 1.创建一个空对象
+    obj._proto_ = constrc.prototype; // 2.将构造函数的 prototype 赋予该对象的 _proto_
+    const result = constrc.apply(obj, args); // 3.将constrc执行的上下文this绑定到obj上，并执行
+    return result instanceof Object ? result : obj; //4. 如果构造函数返回的是对象，则使用构造函数执行的结果。否则，返回新创建的对象
+  }
+
+  //使用的例子 构造函数 Person
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  const person1 = myNew(Person, "zhouzhijie", 21);
+  console.log(Person);
+  console.log(person1);
+</script>
