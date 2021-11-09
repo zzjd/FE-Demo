@@ -1,23 +1,30 @@
-let n = readInt(),
-  k = readInt(),
-  arr = read_line().split(" ");
-for (let i = 0; i < n - k + 1; i++) {
-  let len = 1;
-  let long = 1;
-  let res = arr[i];
-  for (let j = i; j < k + i; j++) {
-    if (arr[j] === arr[j + 1]) {
-      len++;
-    } else {
-      len = 1;
-    }
-    if (long === len && res > arr[j]) {
-      res = arr[j];
-    }
-    if (long < len) {
-      long = len;
-      res = arr[j];
-    }
-  }
-  console.log(res);
-}
+<View style={styles.container}>
+  {" "}
+  // padding: 20
+  <View style={{ marginLeft: 100, marginTop: 50 }}>
+    <Text
+      ref="banner"
+      style={{ marginTop: 123, backgroundColor: "red", marginLeft: 78 }}
+      onPress={() => {
+        const handle = findNodeHandle(this.refs.banner);
+        UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
+          console.log("x=", x); //相对父视图位置x
+          console.log("y=", y); //相对父视图位置y
+          console.log("width=", width); //组件宽度
+          console.log("height=", height); //组件高度
+          console.log("pageX=", pageX); //绝对位置x
+          console.log("pageY=", pageY); //绝对位置y
+        });
+
+        UIManager.measureInWindow(handle, (x, y, width, height) => {
+          console.log("====x=", x); //绝对位置x
+          console.log("====y=", y); //绝对位置y
+          console.log("====width=", width); //组件宽度
+          console.log("====height=", height); //组件高度
+        });
+      }}
+    >
+      这是一个按钮adsfadsfadf
+    </Text>
+  </View>
+</View>;
