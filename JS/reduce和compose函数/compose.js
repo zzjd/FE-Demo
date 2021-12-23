@@ -1,5 +1,5 @@
-// compose ×îºó·µ»ØµÄ ÊÇ º¯Êı
-// ¶¨Òå£ºcompose(a, b, c)(1, 2)  ==>  a(b(c(1, 2)))
+// compose ï¿½ï¿½ó·µ»Øµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½å£ºcompose(a, b, c)(1, 2)  ==>  a(b(c(1, 2)))
 
 function composeByReduce(...funcs) {
   funcs = funcs.reverse();
@@ -22,7 +22,7 @@ function composeByReduce(...funcs) {
 }
 
 function composeByApply(...fns) {
-  // reverse() ×÷ÓÃÊÇÊ¹ÊäÈëº¯Êı´ÓÓÒÍù×óÖ´ĞĞ
+  // reverse() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ëº¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
   fns = fns.reverse();
   return function (...args) {
     let res;
