@@ -1,7 +1,12 @@
-// // 推荐这篇文章： https://juejin.cn/post/6997617674532438046
+// 推荐这篇文章： https://juejin.cn/post/6997617674532438046
 
-// 语法:   arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
-// arr.reduce(callback(accumulator, currentValue[index[array]])[initialValue]);
+// array.reduce(callbackfn, [initialValue]);
+
+// function callbackfn(preValue,curValue,index,array){}
+//      preValue: 上一次调用回调返回的值，或者是提供的初始值（initialValue）
+//      curValue: 数组中当前被处理的数组项
+//      index: 当前数组项在数组中的索引值
+//      array: 调用?reduce()方法的数组
 
 // 下面实现 reduce 函数, prev 是 传入reduce中初始的值
 Array.prototype.myReduce = function (callback, prev) {
